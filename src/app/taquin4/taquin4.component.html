@@ -1,0 +1,22 @@
+<div class="centre">
+    <h1>Le Taquin avec Angular :</h1>
+    
+        <div *ngIf="Win" class="mainWin">
+            <img src="assets/4/final.jpg" class="images"/>
+            <strong class="texte" class="texteWin">Gagné en {{counter}} coups !</strong>
+        </div> 
+        <div *ngIf="!Win" class="main3" id="taquin">
+        <div *ngFor="let content of Position; let i = index"  class="block" (click)="Swap(Position[i])">         
+            <img *ngIf="isNumber(content)" src="assets/4/{{Position[i]}}.jpg" alt="photo_case" 
+            class="images" />
+            <span class="texte">{{Position[i]}}</span>
+        </div>
+        </div> 
+</div>
+
+<div class="data">
+    <span>Nombre de coups: {{counter}}</span>
+    <button class="button" (click)="Restart()">Restart</button>
+    <button class="button" routerLink="">Le 3 fois 3</button>     
+</div>  
+

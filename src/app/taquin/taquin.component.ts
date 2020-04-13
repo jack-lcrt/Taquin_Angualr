@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as  _ from 'lodash';
+import {shuffle} from 'lodash';
 
 @Component({
   selector: 'app-taquin',
@@ -8,7 +8,7 @@ import * as  _ from 'lodash';
 })
 export class TaquinComponent implements OnInit {
 
-  Position: Array<any> = _.shuffle([1, 2, 3, 4, 5, 6, 7, 8, ' ']);
+  Position: Array<any> = shuffle([1, 2, 3, 4, 5, 6, 7, 8, ' ']);
   PositionInit: Array<any> =  this.Position.slice();
   Win = false;
   counter = 0;

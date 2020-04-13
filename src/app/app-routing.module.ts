@@ -5,7 +5,8 @@ import { Taquin4Component } from './taquin4/taquin4.component';
 
 const routes: Routes = [
   { path: '', component: TaquinComponent },
-  {path: 'taquin4', component: Taquin4Component}
+  {path: 'taquin4', component: Taquin4Component},
+  {path: '**', component: TaquinComponent}
 ];
 
 @NgModule({

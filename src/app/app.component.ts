@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  Tiles = 9;
+  gridSize = 9;
 
-  changeTilesNum(num: number) {
-    this.Tiles = num;
+  changeGridSizeNum(num: number) {
+    this.gridSize = num;
   }
 
 }

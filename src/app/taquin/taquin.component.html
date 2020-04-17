@@ -1,20 +1,26 @@
 <div class="centre">
-    
-        <div *ngIf="Win" [class]="'mainWin'+Tilesstr">
-            <img [src]="sourceContent(0)" class="images"/>
-            <strong class="texte" class="texteWin">Gagné en {{counter}} coups !</strong>
-        </div> 
-        <div *ngIf="!Win" [class]="'main'+Tilesstr" id="taquin">
-        <div *ngFor="let content of Order"  [class]="'block'+Tilesstr" (click)="Swap(content)">         
-            <img *ngIf="content !== 0" [src]="sourceContent(content)" alt="photo_case" 
-            class="images" />
-            <span *ngIf="content !== 0" class="texte">{{content}}</span>
-        </div>
-        </div> 
+  <div *ngIf="hasWon" [class]="'main-Win' + ' ' + 'main-Win-' + SizeStr">
+    <img [src]="sourceContent(0)" class="images" />
+    <strong class="texte texte-Win">Gagné en {{ counter }} coups !</strong>
+  </div>
+  <div *ngIf="!hasWon" [class]="'main' + ' ' + 'main-' + SizeStr">
+    <div
+      *ngFor="let content of Order"
+      [class]="'block' + ' ' + 'block-' + SizeStr"
+      (click)="Swap(content)"
+    >
+      <img
+        *ngIf="content !== 0"
+        [src]="sourceContent(content)"
+        alt="photo_case"
+        class="images"
+      />
+      <span *ngIf="content !== 0" class="texte">{{ content }}</span>
+    </div>
+  </div>
 </div>
 
-<div [class]="'data'+Tilesstr">
-    <span>Nombre de coups: {{counter}}</span>
-    <button class="button" (click)="Restart()">Restart</button>     
-</div>  
-
+<div [class]="'data' + ' ' + 'data-' + SizeStr">
+  <span>Nombre de coups: {{ counter }}</span>
+  <button class="button" (click)="Restart()">Restart</button>
+</div>

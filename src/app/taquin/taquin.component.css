@@ -3,7 +3,7 @@
 	/* text-align: center; */
 }
 
-.main3{
+.main9{
 	margin: auto;
 	text-align: center;
 	border: solid black 2px;
@@ -12,9 +12,21 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-
+	border-radius: 3px;
 }
-.mainWin{
+
+.main16{
+	margin: auto;
+	text-align: center;
+	border: solid black 2px;
+	width: 390px;
+	height: 370px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.mainWin9{
 	margin: auto;
 	text-align: center;
 	border: solid black 2px;
@@ -22,14 +34,30 @@
 	height: 310px;
 }
 
-.block{
+
+.mainWin16{
+	margin: auto;
+	text-align: center;
+	border: solid black 2px;
+	width: 390px;
+	height: 370px;
+}
+
+.block9{
 	text-align: center;
 	line-height: 100px;
 	border: solid black 1px ;
 	font-size: large;
 	font-weight: bold;
 }
-
+.block16{
+	text-align: center;
+	line-height: 90px;
+	border: solid black 1px ;
+	font-size: large;
+	font-weight: bold;
+	transition-delay: 1s;
+}
 .images{
 	max-width: 100%;
 	max-height: 100%;
@@ -44,7 +72,7 @@
 	font-size: large;
 	color: blue;
 }
-.data{
+.data9{
 	position: absolute;
 	left: 345px;
 	top: 100px;
@@ -54,15 +82,30 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	border: solid black 1px
+	border: solid black 1px;
+	text-align: center
+}
+
+.data16{
+	position: absolute;
+	left: 300px;
+	top: 100px;
+	display: flex;
+	width : 100px;
+	height: 120px;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: solid black 1px;
+	text-align: center
 
 }
 
 button{
 	width:90px;
 	height: 20px;
-	border-radius: 12px;
-	background-color: coral;
+	border-radius: 3px;
+	background-color: dodgerblue;
 }
 
 button:hover {

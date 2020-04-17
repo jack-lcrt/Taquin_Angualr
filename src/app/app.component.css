@@ -1,5 +1,22 @@
+.header{
+    margin: 30px;
+    text-align: center;
+}
 
-div {
+.title{
     text-align: center;
     margin: auto;
+}
+
+button{
+    text-align: center;
+    margin: auto;
+    height: 30px;
+    width: 100px;
+    background-color: dodgerblue;
+    border-radius: 3px;
+}
+
+button:hover{
+    background-color: white;
 }

@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  Tiles = 9;
+
+  changeTilesNum(num: number) {
+    this.Tiles = num;
+    console.log(this.Tiles);
+  }
+
 }

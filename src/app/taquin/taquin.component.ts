@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import {shuffle} from 'lodash';
 
 @Component({
@@ -6,30 +6,45 @@ import {shuffle} from 'lodash';
   templateUrl: './taquin.component.html',
   styleUrls: ['./taquin.component.css']
 })
-export class TaquinComponent implements OnInit {
 
-  Position: Array<any> = shuffle([1, 2, 3, 4, 5, 6, 7, 8, ' ']);
-  PositionInit: Array<any> =  this.Position.slice();
+
+
+export class TaquinComponent implements OnInit, OnChanges {
+
+  @Input() TilesNumber: number;
+  Order: Array<number> = [];
+  Tilesstr = '';
   Win = false;
   counter = 0;
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    console.log(this.TilesNumber);
+    this.Tilesstr = this.TilesNumber.toString();
+    this.Order = shuffle([...Array(this.TilesNumber).keys()]);
   }
-  CanSwap(index1: number, indexNum: number): boolean {
-    if (([2, 5, 8].includes(index1)) && (index1 === indexNum + 3 || index1 === indexNum - 3 || index1 === indexNum + 1)) {
-      return true;
-    } else {
-    if (index1 % 3 === 0 && (index1 === indexNum + 3 || index1 === indexNum - 3 || index1 === indexNum - 1)) {
-      return true;
-    } else {
-    if (([1, 4, 7].includes(index1)) && (index1 === indexNum + 3 || index1 === indexNum - 3 || index1 === indexNum + 1
-      || index1 === indexNum - 1)) {
-      return true;
-    }
-    return false;
-  }}}
 
+  ngOnChanges(): void {
+    this.Tilesstr = this.TilesNumber.toString();
+    this.Order = shuffle([...Array(this.TilesNumber).keys()]);
+    console.log(this.sourceContent(3));
+  }
+
+  sourceContent(content: number): string {
+    const src: string = 'assets/' + this.Tilesstr + '/';
+    if (content !== 0) {
+      return src + String(content) + '.jpg';
+    } else {
+      return src + 'final.jpg';
+    }
+  }
+
+  CanSwap(index0: number, indexNum: number): boolean {
+    const UpDown: boolean = indexNum === index0 + Math.sqrt(this.TilesNumber) || indexNum === index0 - Math.sqrt(this.TilesNumber);
+    const Left: boolean = indexNum === index0 + 1 && indexNum % Math.sqrt(this.TilesNumber) !== 0;
+    const Right: boolean = indexNum === index0 - 1 && indexNum % Math.sqrt(this.TilesNumber) !== Math.sqrt(this.TilesNumber) - 1;
+    return UpDown || Left || Right;
+  }
   isNumber(val: any) {
     return( typeof val === 'number');
   }
@@ -48,20 +63,20 @@ export class TaquinComponent implements OnInit {
   }
 
   Swap(num: any) {
-    const indexNum: number = this.Position.indexOf(num);
-    const index1: number = this.Position.indexOf(' ');
-    if (this.CanSwap(index1, indexNum)) {
-      this.Position[index1] = num;
-      this.Position[indexNum] = ' ';
-      this.counter += 1;
-      if (this.isSameList(this.Position, [1, 2, 3, 4, 5, 6, 7, 8, ' '])) {
+    const indexNum: number = this.Order.indexOf(num);
+    const index0: number = this.Order.indexOf(0);
+    if (this.CanSwap(index0, indexNum)) {
+      this.Order[index0] = num;
+      this.Order[indexNum] = 0;
+      this.counter ++;
+      if (this.isSameList(this.Order, [...Array(this.TilesNumber).keys()])) {
         this.Win = true;
       }
     }
   }
 
   Restart() {
-    this.Position = this.PositionInit.slice();
+    this.Order = shuffle([...Array(this.TilesNumber).keys()]);
     this.counter = 0;
     this.Win =  false;
   }

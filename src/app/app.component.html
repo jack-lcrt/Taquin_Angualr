@@ -1,3 +1,8 @@
-<div>
-    <router-outlet></router-outlet>
+<div class="header">
+    <h1 class="title">Le taquin avec Angular :</h1>
+</div>
+<app-taquin [TilesNumber]="Tiles"></app-taquin>
+<div class="header">
+<button *ngIf="Tiles !== 16" (click)="changeTilesNum(16)">Le 4 fois 4</button>
+<button *ngIf="Tiles !== 9"(click)="changeTilesNum(9)">Le 3 fois 3</button>
 </div>

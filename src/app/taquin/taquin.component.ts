@@ -8,7 +8,7 @@ import { shuffle, isEqual } from 'lodash';
 })
 export class TaquinComponent implements OnInit, OnChanges {
   @Input() gridSize: number;
-  Order: Array<number>;
+  TilesOrder: Array<number>;
   SizeStr: string;
   hasWon = false;
   counter = 0;
@@ -16,12 +16,12 @@ export class TaquinComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.SizeStr = this.gridSize.toString();
-    this.Order = shuffle([...Array(this.gridSize).keys()]);
+    this.TilesOrder = shuffle([...Array(this.gridSize).keys()]);
   }
 
   ngOnChanges(): void {
     this.SizeStr = this.gridSize.toString();
-    this.Order = shuffle([...Array(this.gridSize).keys()]);
+    this.TilesOrder = shuffle([...Array(this.gridSize).keys()]);
   }
 
   sourceContent(content: number): string {
@@ -47,20 +47,20 @@ export class TaquinComponent implements OnInit, OnChanges {
   }
 
   Swap(num: any) {
-    const indexNum: number = this.Order.indexOf(num);
-    const index0: number = this.Order.indexOf(0);
+    const indexNum: number = this.TilesOrder.indexOf(num);
+    const index0: number = this.TilesOrder.indexOf(0);
     if (this.canSwap(index0, indexNum)) {
-      this.Order[index0] = num;
-      this.Order[indexNum] = 0;
+      this.TilesOrder[index0] = num;
+      this.TilesOrder[indexNum] = 0;
       this.counter++;
-      if (isEqual(this.Order, [...Array(this.gridSize).keys()])) {
+      if (isEqual(this.TilesOrder, [...Array(this.gridSize).keys()])) {
         this.hasWon = true;
       }
     }
   }
 
   Restart() {
-    this.Order = shuffle([...Array(this.gridSize).keys()]);
+    this.TilesOrder = shuffle([...Array(this.gridSize).keys()]);
     this.counter = 0;
     this.hasWon = false;
   }

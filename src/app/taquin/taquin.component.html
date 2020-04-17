@@ -5,7 +5,7 @@
   </div>
   <div *ngIf="!hasWon" [class]="'main' + ' ' + 'main-' + SizeStr">
     <div
-      *ngFor="let content of Order"
+      *ngFor="let content of TilesOrder"
       [class]="'block' + ' ' + 'block-' + SizeStr"
       (click)="Swap(content)"
     >

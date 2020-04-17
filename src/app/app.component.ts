@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   gridSize = 9;
 
-  changeGridSizeNum(num: number) {
+  setGridSize(num: number) {
     this.gridSize = num;
   }
 

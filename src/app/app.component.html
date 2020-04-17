@@ -3,10 +3,10 @@
 </div>
 <app-taquin [gridSize]="gridSize"></app-taquin>
 <div class="header">
-  <button *ngIf="gridSize !== 16" (click)="changeGridSizeNum(16)">
-    Le 4 fois 4
+  <button *ngIf="gridSize !== 16" (click)="setGridSize(16)">
+    Le 4x4
   </button>
-  <button *ngIf="gridSize !== 9" (click)="changeGridSizeNum(9)">
-    Le 3 fois 3
+  <button *ngIf="gridSize !== 9" (click)="setGridSize(9)">
+    Le 3x3
   </button>
 </div>

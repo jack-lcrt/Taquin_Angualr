@@ -1,13 +1,13 @@
 <div class="centre">
-  <div *ngIf="hasWon" [class]="'main-Win' + ' ' + 'main-Win-' + SizeStr">
+  <div *ngIf="hasWon" [class]="'main-Win' + ' ' + 'main-Win-' + orderedTiles">
     <img [src]="sourceContent(0)" class="images" />
     <strong class="texte texte-Win">Gagné en {{ counter }} coups !</strong>
   </div>
-  <div *ngIf="!hasWon" [class]="'main' + ' ' + 'main-' + SizeStr">
+  <div *ngIf="!hasWon" [class]="'main' + ' ' + 'main-' + orderedTiles">
     <div
-      *ngFor="let content of TilesOrder"
-      [class]="'block' + ' ' + 'block-' + SizeStr"
-      (click)="Swap(content)"
+      *ngFor="let content of orderedTiles"
+      [class]="'block' + ' ' + 'block-' + orderedTiles"
+      (click)="swap(content)"
     >
       <img
         *ngIf="content !== 0"
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div [class]="'data' + ' ' + 'data-' + SizeStr">
+<div [class]="'data' + ' ' + 'data-' + orderedTiles">
   <span>Nombre de coups: {{ counter }}</span>
-  <button class="button" (click)="Restart()">Restart</button>
+  <button class="button" (click)="restart()">Restart</button>
 </div>

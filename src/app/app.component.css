@@ -1,0 +1,111 @@
+.header {
+  margin: 30px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  margin: auto;
+}
+
+button {
+  text-align: center;
+  margin: auto;
+  height: 30px;
+  width: 80px;
+  background-color: dodgerblue;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: white;
+}
+
+.centre {
+  margin: auto;
+}
+
+.main {
+  margin: auto;
+  text-align: center;
+  border: solid black 2px;
+  display: grid;
+  border-radius: 3px;
+}
+
+.main-16 {
+  width: 390px;
+  height: 370px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.main-9 {
+  width: 310px;
+  height: 310px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main-Win {
+  margin: auto;
+  text-align: center;
+  border: solid black 2px;
+}
+
+.main-Win-16 {
+  width: 390px;
+  height: 370px;
+}
+.main-Win-9 {
+  width: 310px;
+  height: 310px;
+}
+
+.block {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+.block-16 {
+  line-height: 90px;
+}
+.block-9 {
+  line-height: 100px;
+}
+
+.images {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.texte {
+  position: relative;
+  bottom: 140px;
+  color: blue;
+  font-size: large;
+}
+.texte-Win {
+  text-align: center;
+  font-size: large;
+  color: blue;
+}
+.data {
+  position: absolute;
+  display: flex;
+  width: 100px;
+  height: 120px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: solid black 1px;
+  text-align: center;
+}
+
+.data-16 {
+  left: 300px;
+  top: 100px;
+}
+
+.data-9 {
+  left: 345px;
+  top: 100px;
+}

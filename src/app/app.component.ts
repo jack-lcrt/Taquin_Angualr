@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  gridSize = 9;
+
+  setGridSize(num: number) {
+    this.gridSize = num;
+  }
+
 }

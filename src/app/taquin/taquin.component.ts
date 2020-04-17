@@ -19,7 +19,6 @@ export class TaquinComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.TilesNumber);
     this.Tilesstr = this.TilesNumber.toString();
     this.Order = shuffle([...Array(this.TilesNumber).keys()]);
   }
@@ -27,7 +26,6 @@ export class TaquinComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.Tilesstr = this.TilesNumber.toString();
     this.Order = shuffle([...Array(this.TilesNumber).keys()]);
-    console.log(this.sourceContent(3));
   }
 
   sourceContent(content: number): string {

@@ -10,7 +10,6 @@ export class AppComponent {
 
   changeTilesNum(num: number) {
     this.Tiles = num;
-    console.log(this.Tiles);
   }
 
 }

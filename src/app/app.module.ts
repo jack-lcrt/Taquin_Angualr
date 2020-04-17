@@ -10,9 +10,7 @@ import { TaquinComponent } from './taquin/taquin.component';
     AppComponent,
     TaquinComponent,
   ],
-  imports: [
-    BrowserModule,
-  ],
+  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent]
 })
